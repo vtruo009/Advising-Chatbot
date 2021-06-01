@@ -33,17 +33,19 @@ def ParsePrerequsitesPDF():
     courses = {}
     course = ''
     for text in soup.find_all('tr')[1:]:
-        courses[text.td.text] = text.contents[2].text
+        # print(text.td.text.lower().replace(" ", ''))
+        courses[text.td.text.lower().replace(" ", '')] = text.contents[2].text
 
     for number in courses:
         sentences = nltk.sent_tokenize(courses[number])
         for sent in sentences:
             prereq = re.findall("^Prerequisite\(s\)\:.*", sent)
             if len(prereq) > 0:
-                courses[number] = prereq[0]
+                courses[number] = prereq[0][17:]
                 break
             else:
                 courses[number] = 'Prerequisite(s): none.'
+    return courses
     # prereqs = []
     # for item in desc:
     #     sentences = nltk.sent_tokenize(item)

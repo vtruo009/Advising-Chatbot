@@ -24,6 +24,24 @@ dictionary = []
 #     for course in data["courses"]:
 #         if course['number'] not in course_list:
 #             course_list[course['number'].lower()] = course["prerequisites"]
+def PopulateLists():
+    global course_list
+    course_list = parse_pdf.ParsePrerequsitesPDF()
+
+def GenerateResponse(intent, params, processed_tokens):
+    global course_list
+    if intent == "Check Prerequisites":
+        print(course_list[params])
+    elif intent == "Check Available Classes":
+        c = re.sub("[A-Za-z]+", lambda ele: " " + ele[0] + " ", params[0]).upper()
+        courses = ''
+        for course in course_list:
+            if c in course_list[course]:
+                if courses == '':
+                    courses = course.upper()
+                else:
+                    courses +=  ', ' + course.upper()
+        print(courses)
 
 #====================== Query Processing ======================#
 def find_edit1_words(input):
@@ -76,24 +94,29 @@ def ProcessQuery(user_query):
     #     if token == "prereq" or token == "prereqs":
     #         token = "prerequisites"
     #     stemmed_query.append(stemmer.stem(token))
-    
+    # print(tokens)
     # print(processed_tokens)
-    corrected_words = spelled_correctly(processed_tokens)
-    GoogleDF.Dialog(' '.join(processed_tokens))
+    # corrected_words = spelled_correctly(processed_tokens)
+    (intent, params) = GoogleDF.CheckIntent(' '.join(processed_tokens))
+    PopulateLists()
+    GenerateResponse(intent, params, processed_tokens)
+    
     # print(corrected_words)
 
 
 def main():
     GoogleDF.implicit()
+    
     # ParsePDF()
     # ProcessData()
     # # while (True):
     # print("Adviser: What can I help you with?")
-    # user_query = input("Student: ")
-    # ProcessQuery(user_query)
-    parse_pdf.ParseCoursesPDF()
-    # parse_pdf.ParsePrerequsitesPDF()
+    user_query = input("Student: ")
+    ProcessQuery(user_query)
+    # parse_pdf.ParseCoursesPDF()
+    parse_pdf.ParsePrerequsitesPDF()
     # FindPrereq()
+
 
 
 main()

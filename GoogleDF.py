@@ -9,7 +9,7 @@ def implicit():
     buckets = list(storage_client.list_buckets())
     # print(buckets)
     
-def Dialog(user_query):
+def CheckIntent(user_query):
     session_client = dialogflow_v2.SessionsClient()
     session = session_client.session_path("adviserbot-bluy", "testrun1")
     intent_client = dialogflow_v2.IntentsClient()
@@ -22,9 +22,10 @@ def Dialog(user_query):
     response = session_client.detect_intent(
         request={"session": session, "query_input": query_input}
     )
-
+    # if response.query_result.intent.display_name == 'Check Prerequisites':
+    intent = response.query_result.intent.display_name
+    params = response.query_result.parameters.get('course')
     # Get the prereqs here and print the prereqs
-
     print(response.query_result.fulfillment_text)
     # print(
     #     "Detected intent: {} (confidence: {})\n".format(
@@ -32,3 +33,6 @@ def Dialog(user_query):
     #         response.query_result.intent_detection_confidence,
     #     )
     # )
+    if intent == "Check Sufficiency":
+        return (intent, [response.query_result.parameters.get("course"), response.query_result.parameters.get("course1")])
+    return intent, params
