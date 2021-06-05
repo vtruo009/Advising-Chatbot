@@ -6,11 +6,7 @@ from bs4 import BeautifulSoup
 from nltk.tokenize import sent_tokenize
 
 def ParseCoursesPDF():
-    '''Need to keep in mind that new courses may be added to this websit. Need to do some dynamic processing'''
-    # file = open("CSE_Courses.pdf", "rb")
-    # pdf = p.PdfFileReader(file)
-    # page = pdf.getPage(0)
-    # pdf_text = page.extractText()
+    '''Need to keep in mind that new courses may be added to this website. Need to do some dynamic processing'''
     with open("pdfs/courses.pdf", "rb") as file:
         pdf = p.PdfFileReader(file)
         num_pages = pdf.getNumPages()
@@ -18,7 +14,6 @@ def ParseCoursesPDF():
         for i in range(num_pages):
             page = pdf.getPage(i)
             content += page.extractText() + '\n'
-    # tokens = re.findall("[cC][sS]\s?[0-9]+[a-zA-Z]*", content)
     tokens = re.findall("(?:[cC][sS]|ENGR|EE)\s?[0-9]+[a-zA-Z]*", content)
     with open("courses.txt", "r+") as file:
         for token in tokens:
@@ -33,7 +28,6 @@ def ParsePrerequsitesPDF():
     courses = {}
     course = ''
     for text in soup.find_all('tr')[1:]:
-        # print(text.td.text.lower().replace(" ", ''))
         courses[text.td.text.lower().replace(" ", '')] = text.contents[2].text
 
     for number in courses:
@@ -46,12 +40,6 @@ def ParsePrerequsitesPDF():
             else:
                 courses[number] = 'Prerequisite(s): none.'
     return courses
-    # prereqs = []
-    # for item in desc:
-    #     sentences = nltk.sent_tokenize(item)
-    #     for sent in sentences:
-    #         if bool(re.findall("^Prerequisite\(s\)\:.*", sent)):
-    #             prereqs.append(re.findall("^Prerequisite\(s\)\:.*", sent))
 
 
 

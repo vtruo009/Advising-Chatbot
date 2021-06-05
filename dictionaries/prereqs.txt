@@ -1,0 +1,52 @@
+ENGR 001 Prerequisite(s): none.
+ENGR 101 Prerequisite(s): restricted to class level standing of junior; restricted to major(s) Bioengineering, Bioengineering BS + MS, Chemical Engineering, Chemical Engineering BS + MS, Computer Engineering, Computer Science, Computer Science BS + MS, Electrical Engineering, Electrical Engineering BS + MS, Environmental Engineering, Environmental Engr BS + MS, Materials Science and Engineer, Mechanical Engineering, Mechanical Engineering BS + MS.
+ENGR 180W Prerequisite(s): ENGL 001B with a grade of “C” or better; upper-division standing in the Bourns College of Engineering or consent of instructor.
+CS 005 Prerequisite(s): none.
+CS 006 Prerequisite(s): none.
+CS 008 Prerequisite(s): none.
+CS 009P Prerequisite(s): a college mathematics course (may be taken concurrently) or credit for MATH 009A from the Advanced Placement Examination or the Mathematics Advisory Examination.
+CS 010 Prerequisite(s): MATH 008B, may be taken concurrently or MATH 006B, may be taken concurrently or MATH 007A, may be taken concurrently or MATH 09HA, may be taken concurrently or MATH 008A, may be taken concurrently or MATH 005, may be taken concurrently or MATH 009A, may be taken concurrently; Covers problem solving through structured programming of algorithms on computers using the C++ object-oriented language.
+CS 012 Prerequisite(s): none.
+CS 014 Prerequisite(s): CS 012 with a grade of “C” or better; proficiency in C++.
+CS 061 Prerequisite(s): CS 010 with a grade of  “C” or better.
+CS 100 Prerequisite(s): CS 014 with a grade of “C-” or better.
+CS 105 Prerequisite(s): CS 014.
+CS 110 Prerequisite(s): none.
+CS 111 Prerequisite(s): CS 010; CS 011/MATH 011; MATH 009C (or MATH 09HC).
+CS 120A Prerequisite(s): CS 061 with a grade of “C-” or better.
+CS 120B Prerequisite(s): EE 120A or CS 120A.
+CS 122A Prerequisite(s): CS 012 or CS 013; CS 120B/EE 120B.
+CS 130 Prerequisite(s): CS 100, MATH 031 (MATH 031 may be taken concurrently); or consent of instructor.
+CS 135 Prerequisite(s): CS 100.
+CS 141 Prerequisite(s): CS 014 with a grade of “C-” or better; CS 111; MATH 009C or MATH 09HC; proficiency in C++.
+CS 142 Prerequisite(s): CS 100, CS 141; or equivalent.
+CS 144 Prerequisite(s): none.
+CS 145 Prerequisite(s): CS 141; MATH 031 or MATH 131.
+CS 147 Prerequisite(s): EE 120B or CS 120B.
+CS 150 Prerequisite(s): CS 014 with a grade of “C-” or better; CS 111; MATH 009C (or MATH 09HC).
+CS 152 Prerequisite(s): CS 061, CS 100, CS 111, CS 150.
+CS 153 Prerequisite(s): CS 061, CS 100, CS 111, C++ programming proficiency.
+CS 161 Prerequisite(s): CS 120A/EE 120A.
+CS 160 Prerequisite(s): CS 061, CS 100, CS 111.
+CS 161L Prerequisite(s): CS 161 (may be taken concurrently).
+CS 164 Prerequisite(s): CS 100, CS 111, CS 153.
+CS 165 Prerequisite(s): CS 141, CS 153.
+CS 166 Prerequisite(s): CS 100, CS 111.
+CS 167 Prerequisite(s): CS 100, CS 111;  CS 167 online section: enrollment in the online Master-of-Science in Engineering program.
+CS 168 Prerequisite(s): CS 120A/EE 120A or consent of instructor.
+CS 169 Prerequisite(s): CS 153 or consent of instructor.
+CS 170 Prerequisite(s): CS 100 with a grade of “C-” or better, CS 111.
+CS 171/EE 142 Prerequisite(s): CS 100, MATH 010A or MATH  031.
+CS 172 Prerequisite(s): CS 100; CS 111; EE 114 or STAT 155.
+CS 173 Prerequisite(s): CS 150, may be taken concurrently.
+CS 175 Prerequisite(s): CS 100, junior or senior standing.
+CS 178A Prerequisite(s): CS 141, ENGR 180W;  restricted to class level standing of senior.
+CS 178B Prerequisite(s): CS 178A;  restricted to class level standing of senior.
+CS 179E Prerequisite(s): CS 100 and CS 152 with grades of “C-” or better; ENGR 180W; 8 additional upper-division units in Computer Science.
+CS 179F Prerequisite(s): CS 153 with a grade of “C-” or better; ENGR 180W; 8 additional upper-division units in Computer Science.
+CS 179G Prerequisite(s): none.
+CS 179I Prerequisite(s): CS 100 and CS 164 with grades of “C-” or better; ENGR 180W; 8 additional upper-division units in Computer Science.
+CS 179N Prerequisite(s): CS 130 with a grade of “C-” or better; ENGR 180W; 8 additional upper-division units in Computer Science.
+CS 180 Prerequisite(s): CS 100.
+CS 181 Prerequisite(s): CS 061, CS 100, CS 111, CS 150.
+CS 183 Prerequisite(s): CS 100.
