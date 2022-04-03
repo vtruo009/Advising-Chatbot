@@ -5,8 +5,9 @@ import requests
 from bs4 import BeautifulSoup
 from nltk.tokenize import sent_tokenize
 
-def ParseCoursesPDF():
-    '''Need to keep in mind that new courses may be added to this website. Need to do some dynamic processing'''
+#This is for downloading the course list PDF and parse the PDF instead of webpage
+'''def ParseCoursesPDF():
+    #Need to keep in mind that new courses may be added to this website. Need to do some dynamic processing
     with open("pdfs/courses.pdf", "rb") as file:
         pdf = p.PdfFileReader(file)
         num_pages = pdf.getNumPages()
@@ -17,10 +18,10 @@ def ParseCoursesPDF():
     tokens = re.findall("(?:[cC][sS]|ENGR|EE)\s?[0-9]+[a-zA-Z]*", content)
     with open("courses.txt", "r+") as file:
         for token in tokens:
-            file.write(token + '\n')
+            file.write(token + '\n')'''
 
 
-def ParsePrerequsitesPDF():
+def ParsePrerequsites():
     '''Need to keep in mind that new courses may be added to this websit. Need to do some dynamic processing'''
     URL = 'https://www1.cs.ucr.edu/undergraduate/course-descriptions/'
     page = requests.get(URL)
@@ -40,46 +41,3 @@ def ParsePrerequsitesPDF():
             else:
                 courses[number] = 'Prerequisite(s): none.'
     return courses
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    # print(soup.body.text)
-    # results = soup.find_all('tr')
-    # print(results[1])
-    # with open("pdfs/prerequisites.pdf", "rb") as file:
-    #     pdf = p.PdfFileReader(file)
-    #     num_pages = pdf.getNumPages()
-    #     content = ''
-    #     for i in range(num_pages):
-    #         page = pdf.getPage(i)
-    #         content += page.extractText() + '\n'
-    # print(content)
-    # tokens = re.findall("[cC][sS]\s?[0-9]+[a-zA-Z]*", content)
-    prereqs = []
-    # tokens = re.split("(?<!\w\.\w.)(?<![A-Z][a-z]\.)(?<=\ .|\?)\s", content)
-    # tokens = sent_tokenize(content)
-    # print(tokens)
-    # for token in tokens:
-    #     print(token)
-        # the_one = re.findall("^Prerequisite\(s\):\s.*", token)
-        # print(the_one)
-        # prereqs.extend(the_one)
-        # if len(the_one) > 0:
-        #     break
-    # print(prereqs)
-    # # for token in tokens:
-    # #     print(token)
-    # print("the one", the_one[0].replace('Ò', '\"').replace('Ó', '\"'))

@@ -7,8 +7,10 @@ import re
 import os
 import json
 import GoogleDF
-import parse_pdf
-import envir
+import parse_prereqs
+
+# replace with appropriate json file obtianed from DialogFlow
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = '.json'
 
 stemmer = LancasterStemmer()
 
@@ -17,18 +19,9 @@ stemmed_query = []
 dictionary = []
 english_dict = []
 
-# def ProcessData():
-#     # Read in courses
-#     with open("course_prereqs.json") as file:
-#         data = json.load(file)
-
-#     for course in data["courses"]:
-#         if course['number'] not in course_list:
-#             course_list[course['number'].lower()] = course["prerequisites"]
-
 def PopulateLists():
     global course_list
-    course_list = parse_pdf.ParsePrerequsitesPDF()
+    course_list = parse_prereqs.ParsePrerequsites()
 
 def GenerateResponse(intent, params, processed_tokens):
     global course_list
@@ -106,7 +99,7 @@ def spelled_correctly(tokens):
     
 def ProcessQuery(user_query):
     tokens = re.findall(r'[a-zA-Z]+\s?[0-9]+[a-zA-Z]*|\b[a-zA-Z]+\b', user_query.lower())
-
+    
     processed_tokens = []
     for token in tokens:
         processed_tokens.append(token.replace(' ', ''))
@@ -123,13 +116,8 @@ def ProcessQuery(user_query):
 def main():
     GoogleDF.implicit()
     
-    # ParsePDF()
-    # ProcessData()
     while (True):
         user_query = input("Student: ")
         ProcessQuery(user_query)
-        # parse_pdf.ParseCoursesPDF()
-        parse_pdf.ParsePrerequsitesPDF()
-    # FindPrereq()
 
 main()

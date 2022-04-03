@@ -1,9 +1,12 @@
 from google.cloud import dialogflow_v2, storage
 
+
+
 def implicit():
     # If you don't specify credentials when constructing the client, the
     # client library will look for credentials in the environment.
-    storage_client = storage.Client.from_service_account_json('adviserbot-bluy-267d7db98ec7.json')
+    # Replace with appropriate json file obtained from DialogFlow
+    storage_client = storage.Client.from_service_account_json('.json')
 
     # Make an authenticated API request
     buckets = list(storage_client.list_buckets())
